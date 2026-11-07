@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Sant Joan';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../images/SantJoanDespiRegular.woff');
+}
+body {
+    /* image from https://www.vecteezy.com/photo/70311943-underwater-bubbles-rising-in-clear-turquoise-ocean-water */
+    text-align: center;
+    margin: 0px;
+    animation: fadeInAnimation ease 2s;
+    background-image: url(../images/blub.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@media only screen and (max-width:700px) {
+    .header img {
+        width: 150px !important;
+    }
+    .marquee h1 {
+        font-size: 75px !important;
+    }
+}
+.header {
+    /* image from https://www.vecteezy.com/photo/31087428-blue-water-surface-background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(123, 152, 208);
+    background-image: url(../images/water.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-bottom: 0px;
+    padding-top: 10px;
+}
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0px;
+    padding-bottom: 0px;
+}
+.marquee h1 {
+    display: inline-block;
+    animation: scroll 10s linear infinite;
+    margin: 5px;
+    font-size: 145px;
+    font-family: 'Sant Joan';
+    text-shadow: 0px 0px #fff, 0px 1px #fff, 0px -1px #fff, 0px 2px #fff, 0px -2px #fff, 1px 0px #fff, 1px 1px #fff, 1px -1px #fff, 1px 2px #fff, 1px -2px #fff, -1px 0px #fff, -1px 1px #fff, -1px -1px #fff, -1px 2px #fff, -1px -2px #fff, 2px 0px #fff, 2px 1px #fff, 2px -1px #fff, 2px 2px #fff, 2px -2px #fff, -2px 0px #fff, -2px 1px #fff, -2px -1px #fff, -2px 2px #fff, -2px -2px #fff;
+    color: rgb(26, 47, 61);
+}
+@keyframes scroll {
+    from {
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+@keyframes fadeInAnimation {
+    0% {
+    opacity: 0;
+    }
+    100% {
+    opacity: 1;
+    }
+}
+img:hover {
+    transform: scale(1.05);
+    transition: transform .3s ease-in-out;
+}
+.nav {
+    background-color: rgb(29, 120, 148);
+    overflow: hidden;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+}
+.nav a {
+    display: inline-block;
+    text-shadow: 0px 0px #fff, 0px 1px #fff, 0px -1px #fff, 1px 0px #fff, 1px 1px #fff, 1px -1px #fff, -1px 0px #fff, -1px 1px #fff, -1px -1px #fff;
+    color: rgb(25, 35, 57);
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color .3s ease-in-out;
+    padding: 10px;
+    margin: 0px;
+    width: auto;
+    font-family: 'Sant Joan';
+}
+.nav a:hover, .active {
+    background-color: rgb(46, 154, 187);
+}
