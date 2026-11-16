@@ -1,30 +1,67 @@
-@font-face {
+/* WEBSITE FONTS */
+@font-face /* Sant Joan */ {
     font-family: 'Sant Joan';
     font-style: normal;
     font-weight: normal;
     src: url('../images/SantJoanDespiRegular.woff');
+} 
+@font-face /* Folks */ {
+    font-family: 'Folks';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../images/Folks-Normal.ttf');
+}
+* {
+    box-sizing: border-box;
+}
+/* GENERAL */
+@keyframes scroll {
+    from {
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+@keyframes fadeInAnimation {
+    0% {
+    opacity: 0;
+    }
+    100% {
+    opacity: 1;
+    }
+}
+#container {
+margin: auto;
+padding: 0 1rem;
+max-width: 48rem;
+width: 100%;
+}
+a { 
+text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
 }
 body {
     /* image from https://www.vecteezy.com/photo/70311943-underwater-bubbles-rising-in-clear-turquoise-ocean-water */
+    /* cursor from https://www.cursor.cc/?action=icon&file_id=241183 */
+    cursor: url('../images/cursor.cur'), pointer !important;
     text-align: center;
     margin: 0px;
     animation: fadeInAnimation ease 2s;
+    background-color: #64b9dd;
     background-image: url(../images/blub.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     animation-iteration-count: 1;
+    text-align: center;
     animation-fill-mode: forwards;
+    width: auto;
 }
-@media only screen and (max-width:700px) {
-    .header img {
-        width: 150px !important;
-    }
-    .marquee h1 {
-        font-size: 75px !important;
-    }
-}
+/* DIVS & DIV-SPECIFIC ELEMENTS */
 .header {
     /* image from https://www.vecteezy.com/photo/31087428-blue-water-surface-background */
     display: flex;
@@ -34,7 +71,7 @@ body {
     background-image: url(../images/water.jpg);
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     background-attachment: fixed;
     padding-bottom: 0px;
     padding-top: 10px;
@@ -54,30 +91,10 @@ body {
     text-shadow: 0px 0px #fff, 0px 1px #fff, 0px -1px #fff, 0px 2px #fff, 0px -2px #fff, 1px 0px #fff, 1px 1px #fff, 1px -1px #fff, 1px 2px #fff, 1px -2px #fff, -1px 0px #fff, -1px 1px #fff, -1px -1px #fff, -1px 2px #fff, -1px -2px #fff, 2px 0px #fff, 2px 1px #fff, 2px -1px #fff, 2px 2px #fff, 2px -2px #fff, -2px 0px #fff, -2px 1px #fff, -2px -1px #fff, -2px 2px #fff, -2px -2px #fff;
     color: rgb(26, 47, 61);
 }
-@keyframes scroll {
-    from {
-        transform: translateX(100vw);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-@keyframes fadeInAnimation {
-    0% {
-    opacity: 0;
-    }
-    100% {
-    opacity: 1;
-    }
-}
-img:hover {
-    transform: scale(1.05);
-    transition: transform .3s ease-in-out;
-}
 .nav {
     background-color: rgb(29, 120, 148);
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 0%;
     position: sticky;
     top: 0;
 }
@@ -95,4 +112,202 @@ img:hover {
 }
 .nav a:hover, .active {
     background-color: rgb(46, 154, 187);
+}
+.titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2364cd;
+  color: #f2e0ff;
+  padding-right: 2%;
+  padding-left: 2%;
+  font-family: 'Folks';
+  font-size: 15px;
+  margin: 0%;
+  font-weight: bold;
+  text-align: left;
+}
+.conthd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    color: #4d23cd;
+    font-family: 'Folks';
+    font-size: 18px;
+}
+.cont {
+    padding: 1%;
+    align-items: center;
+    justify-content: center;
+    color: #4d23cd;
+    font-family: 'Folks';
+    font-size: 18px;
+}
+.cont h1 {
+    font-family: 'Sant Joan';
+    font-size: 50px;
+    margin: 0;
+}
+.cont h2 {
+    font-family: 'Sant Joan';
+    font-size: 30px;
+}
+.buttcont {
+  display: flex;
+  gap: 5px;
+}
+/* DIV COLUMNS */
+[class*="win-"] {
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background: #e1f2ff;
+    border: 5px solid #2364cd;
+    box-shadow: 4px 4px 0 #1622a164;
+    text-align: center;
+}
+.win-1,.win-2 {
+    width: 100%;
+}
+.columns {
+    display: flex;
+    align-items: flex-start;
+    gap: 2%;
+    padding: 1%;
+}
+.left-column {
+    width: 32%;
+}
+.right-column {
+    width: 66%;
+}
+/* IMAGES + LINKS */
+hr {
+    border-width: 2px;
+    border-style: dotted;
+}
+img {
+        transition: transform .3s ease-in-out;
+}
+img:hover {
+    transform: scale(1.05);
+}
+.pic {
+    border-radius: 5px;
+    width: 25%;
+}
+.link {
+position: relative;
+transition: clip-path 275ms ease;
+}
+.link:hover span::before, .link:focus span::before {
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.link span {
+position: relative;
+display: inline-block;
+}
+.link span::before {
+position: absolute;
+content: attr(data-content);
+text-decoration: underline;
+clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+transition: clip-path 275ms ease;
+}
+.butt {
+  background: #396bd7;
+  color: #fbfaff;
+  border: 1.5px solid #fbfaff;
+  border-radius: 5px;
+  width: 25px;
+  height: 25px;
+  font-size: 15px;
+  text-align: center;
+  transition: ease-in-out .2s;
+  padding: 2%;
+}
+.close {
+    background: #cd2323;
+}
+.butt:hover {
+  background: #5ea9ff;
+}
+.close:hover {
+    background: #ff3636;
+}
+/* TEXT & MARKUP */
+/* @MEDIA */
+@media only screen and (max-width: 700px) {
+    /* HEADER */
+    .header {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .header img {
+        width: 40% !important;
+    }
+    .marquee {
+        flex: 1;
+        min-width: 0;
+    }
+    .marquee h1 {
+        font-size: 75px !important;
+    }
+    /* NAVIGATION */
+    .nav {
+        width: 100%;
+        padding: 0%;
+    }
+    .nav a {
+        font-size: 16px;
+    }
+    /* COLUMNS */
+    .columns {
+        flex-direction: column !important;
+        margin: 2%;
+    }
+    .left-column {
+        width: 100%;
+    }
+    .right-column {
+        width: 100%;
+    }
+    /* WELCOME WINDOW */
+    .conthd {
+        flex-direction: row;
+        padding: 15px 5px;
+    }
+    .conthd img {
+        width: 110px !important;
+    }
+    .cont {
+        font-size: 16px;
+    }
+    .cont h1 {
+        font-size: 40px;
+    }
+    .cont h2 {
+        font-size: 28px;
+    }
+    /* WINDOW TITLE BAR */
+    .titlebar {
+        font-size: 13px;
+    }
+    .butt {
+        width: 27px;
+        height: 27px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .conthd {
+        flex-direction: column;
+    }
+    .conthd img {
+        width: 100px !important;
+    }
+    .cont h2 {
+        margin: 5px;
+    }
+}
+@media (min-width: 48rem) {
 }
