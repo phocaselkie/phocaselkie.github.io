@@ -3,12 +3,12 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-var str = '⊹\u00A0 ࣪ ˖\u00A0phocaselkie!\u00A0🦭';
+var str = '⊹\u00A0 ࣪ ˖\u00A0phocaselkie\'s\u00A0website\u00A0🦭';
 document.title = '';
 async function typewriteTitle() {
   for (const char of str) {
   document.title += char;
-  await sleep(200);
+  await sleep(100);
 }
 }
 typewriteTitle();
