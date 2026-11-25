@@ -57,6 +57,7 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     animation-iteration-count: 1;
+    overflow-x: hidden;
     text-align: center;
     animation-fill-mode: forwards;
     width: auto;
@@ -188,7 +189,8 @@ body {
     align-items: flex-start;
     justify-content:center;
     gap: 2%;
-    padding: 1%;
+    padding: 0;
+    margin: 2%;
 }
 .left-column {
     width: 32%;
