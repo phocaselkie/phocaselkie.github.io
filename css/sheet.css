@@ -153,11 +153,11 @@ body {
     overflow-x:scroll;
     font-size: 18px;
     width: 100%;
-    gap: 1%;
+    gap: 5%;
     scroll-snap-type: x proximity;
 }
 .cont {
-    padding: 1%;
+    padding: 2%;
     align-items: flex-start;
     justify-content: center;
     color: #4d23cd;
@@ -199,6 +199,7 @@ body {
 }
 .win-1,.win-2 {
     width: 100%;
+    padding-bottom: 5%;
 }
 .columns {
     display: flex;
@@ -308,6 +309,9 @@ ul {
 p {
     line-height: 1.5;
 }
+h4 {
+    line-height: 1.5;
+}
 .err {
     font-family: 'Sant Joan';
     font-size: 150px !important;
@@ -321,7 +325,12 @@ p {
     padding: 0%;
 }
 .subhead {
-    font-size: 15px !important;
+    font-size: 13px;
+}
+.notice {
+    font-size: 15px;
+    line-height: 0;
+    font-weight: lighter;
 }
 /* @MEDIA */
 @media only screen and (max-width: 700px) {
